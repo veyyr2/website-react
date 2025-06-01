@@ -8,9 +8,13 @@ import Button from './components/Button'; // кнопка, куда можно �
 export default function App() {
     const [count, setCount] = useState(0)
 
+	function countClick() {
+		console.log('LOREM');
+	}
+
     return (
         <>
-            <Header/>
+            <Header />
 
             <main>
                 <section>
@@ -26,7 +30,7 @@ export default function App() {
                         ))}
                     </ul>
                 </section>
-                <Button>Click</Button>
+                <Button onClick={countClick}>Click</Button>
             </main>
         </>
     )
