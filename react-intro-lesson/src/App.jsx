@@ -1,21 +1,32 @@
-import { useState } from "react";
-import "./App.scss";
+import { useState } from 'react';
+import './App.scss';
+import { textForList } from './data.js'; // переменная-список со значениями для Textli
+import Header from './components/Header'; // компонент Хидер
+import Textli from './components/Textli'; // компонент li с текстом
 
-function App() {
-  const [count, setCount] = useState(0);
 
-  return (
-    <>
-	<header>
-		<h3>Hello!</h3>
-		<button>lord</button>
-	</header>
+export default function App() {
+    const [count, setCount] = useState(0)
 
-	<main>
-		<div>hello!</div>
-	</main>
-    </>
-  );
+    return (
+        <>
+            <Header />
+
+            <main>
+                <section>
+                    <h1>Список:</h1>
+
+                    <ul>
+                        {textForList.map((item, index) => (
+                            <Textli
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                            />
+                        ))}
+                    </ul>
+                </section>
+            </main>
+        </>
+    )
 }
-
-export default App;
