@@ -1,8 +1,8 @@
-export default function Textli(props) {
+export default function Textli({ title, description }) {
     return (
         <li>
             <p>
-                <strong>{props.title}</strong> {props.description}
+                <strong>{title}</strong> {description}
             </p>
         </li>
     )
