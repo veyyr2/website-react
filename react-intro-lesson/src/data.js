@@ -12,3 +12,9 @@ export const textForList = [
         description: 'шкулямба'
     }
 ];
+
+export const textForButtons = {
+    lord: 'Это лорд',
+    main: 'Это главный',
+    adviser: 'Это помощник'
+};
