@@ -1,13 +1,18 @@
-import logo from '../assets/react.svg'
-
-let a = 0;
+import logo from '../assets/react.svg';
+import { useState } from 'react'; // это хук для динамики состояний элементов
 
 export default function Header() {
+    // обновление времени 
+    const [timeNow, setTime] = useState(new Date());
+
+    // обновлять каждую секунду переменную timeNow
+    setInterval(() => setTime(new Date()), 1000);
+
     return (
         <header>
-        <h3>Hello!</h3>
-        <p>Твоё время: {a+1}</p>
-        <img src={logo} alt="" />
+            <h3>Hello!</h3>
+            <p>Твоё время: {timeNow.toLocaleTimeString()}</p>
+            <img src={logo} alt="" />
         </header>
     );
 }
