@@ -1,7 +1,7 @@
-export default function Button ({ children, onClick }) {
+export default function Button ({ children, onClick, isActive }) {
 
     return (
-        <button className="button" onClick={onClick}>
+        <button className={isActive ? "button active" : "active"} onClick={onClick}>
             {children}
         </button>
     )

@@ -6,14 +6,12 @@ import Textli from './components/Textli'; // компонент li с текст
 import Button from './components/Button'; // компонент кнопка, куда можно поместить текст
 
 export default function App() {
-    const [content, setContent] = useState('loreq'); // динамика контента от кнопок
-
-    // дебаг
-    console.log('App render')
+    const [contentType, setContentType] = useState(); // динамика контента от кнопок
 
     // функция для изменения контента внутри тега p
     function listenClick(type) {
-        setContent(type)
+        // изменить переменную contentType
+        setContentType(type);
     }
 
     return (
@@ -35,19 +33,28 @@ export default function App() {
                     </ul>
                 </section>
 
-                <Button onClick={() => listenClick(textForButtons.lord)}>
+                <Button
+                    isActive={contentType == textForButtons.lord}
+                    onClick={() => listenClick(textForButtons.lord)}
+                >
                     Click1
                 </Button>
 
-                <Button onClick={() => listenClick(textForButtons.main)}>
+                <Button
+                    isActive={contentType == textForButtons.main}
+                    onClick={() => listenClick(textForButtons.main)}
+                >
                     Click2
                 </Button>
 
-                <Button onClick={() => listenClick(textForButtons.adviser)}>
+                <Button
+                    isActive={contentType == textForButtons.adviser}
+                    onClick={() => listenClick(textForButtons.adviser)}
+                >
                     Click3
                 </Button>
 
-                <p>{content}</p>
+                <p>{contentType}</p>
             </main>
         </>
     )
