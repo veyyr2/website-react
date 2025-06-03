@@ -22,12 +22,12 @@ export default function App() {
                 <section>
                     <h1>Список:</h1>
                     <ul>
-                        {/* Вывод всех элемонтов списка */}
-                        {textForList.map((item, index) => (
+                        {/* Вывод всех элементов списка */}
+                        {textForList.map((i, index) => (
                             <Textli
                                 key={index}
-                                title={item.title}
-                                description={item.description}
+                                title={i.title}
+                                description={i.description}
                             />
                         ))}
                     </ul>
