@@ -40,6 +40,7 @@ export default function MainSection() {
                 </Button>
             ))}
 
+            {/* Вывести контент от нажатой кнопки */}
             <p>{contentType}</p>
         </>
     )
