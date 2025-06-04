@@ -22,4 +22,20 @@
     	color: #fff;
 	}
 }
+
+.active {
+    background-color: #fff;
+    border: 1px solid #000;
+}
 // #endregion Button
+
+// #region TabsSection
+    .container-nav-buttons {
+
+        // flex
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+// #endregion

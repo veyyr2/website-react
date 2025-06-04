@@ -1,4 +1,5 @@
 import logo from '../assets/react.svg';
+import TabsSection from './TabsSection'; // компонент секция с кнопками переключения страниц
 import { useState } from 'react'; // это хук для динамики состояний элементов
 
 export default function Header() {
@@ -10,9 +11,10 @@ export default function Header() {
 
     return (
         <header>
-            <h3>Hello!</h3>
+            <h1>Hello!</h1>
             <p>Твоё время: {timeNow.toLocaleTimeString()}</p>
             <img src={logo} alt="" />
+            <TabsSection/>
         </header>
     );
 }
