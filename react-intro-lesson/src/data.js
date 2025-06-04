@@ -13,8 +13,17 @@ export const textForList = [
     }
 ];
 
-export const textForButtons = {
-    lord: 'Это лорд',
-    main: 'Это главный',
-    adviser: 'Это помощник'
-};
+export const textForButtons = [
+    {
+        contentText: 'Это лорд',
+        nameButton: 'Нажми на меня'
+    },
+    {
+        contentText: 'Это главный',
+        nameButton: 'Нажми на меня 2'
+    },
+    {
+        contentText: 'Это помощник',
+        nameButton: 'Нажми на меня 3'
+    },
+]

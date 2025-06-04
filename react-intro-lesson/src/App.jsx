@@ -22,7 +22,7 @@ export default function App() {
                 <section>
                     <h1>Список:</h1>
                     <ul>
-                        {/* Вывод всех элементов списка */}
+                        {/* Автоматизация создания элементов списка */}
                         {textForList.map((i, index) => (
                             <Textli
                                 key={index}
@@ -33,26 +33,16 @@ export default function App() {
                     </ul>
                 </section>
 
-                <Button
-                    isActive={contentType == textForButtons.lord}
-                    onClick={() => listenClick(textForButtons.lord)}
-                >
-                    Click1
-                </Button>
-
-                <Button
-                    isActive={contentType == textForButtons.main}
-                    onClick={() => listenClick(textForButtons.main)}
-                >
-                    Click2
-                </Button>
-
-                <Button
-                    isActive={contentType == textForButtons.adviser}
-                    onClick={() => listenClick(textForButtons.adviser)}
-                >
-                    Click3
-                </Button>
+                {/* Автоматизация создания кнопок */}
+                {textForButtons.map((i, index) => (
+                    <Button
+                        key={index}
+                        isActive={contentType == i.contentText}
+                        onClick={() => listenClick(i.contentText)}
+                    >
+                        {i.nameButton}
+                    </Button>
+                ))}
 
                 <p>{contentType}</p>
             </main>
