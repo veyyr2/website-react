@@ -2,6 +2,7 @@ import { useState } from 'react'; // это хук для динамики со�
 import './App.scss';
 import { textForList, textForButtons } from './data.js'
 import Header from './components/Header'; // компонент Хидер
+import Footer from './components/Footer'; // компонент футер
 import Textli from './components/Textli'; // компонент li с текстом
 import Button from './components/Button'; // компонент кнопка, куда можно поместить текст
 
@@ -46,6 +47,8 @@ export default function App() {
 
                 <p>{contentType}</p>
             </main>
+
+            <Footer/>
         </>
     )
 }
