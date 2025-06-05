@@ -1,11 +1,10 @@
 import Button from './Button' // компонент кнопка
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 export default function FeedbackSection() {
     const [name, setName] = useState('') // следить за изменением в форме ИМЯ
-    const [reason, setReason] = useState('notError') // следить за изменением в форме ПРИЧИНА
-    const [hasError, setHasError] = useState(false) // чтобы сразу пользователю не выводилась ошибка
-    const [somevalue, setSomeValue] = useState('') // чтобы в заголовке динамически обновлялось
+    const [hasError, setHasError] = useState(false) // чтобы сразу пользователю не выводилась ошибка в инпут полях, что там пусто
+    const refInput = useRef(null) // ссылка на второй input
 
     // функция для изменения значения в имени
     function handlerNameChange(event) {
@@ -32,24 +31,14 @@ export default function FeedbackSection() {
                 />
 
                 <label htmlFor="reason">Причина</label>
-                <select
-                    id="reason"
-                    className="control"
-                    value={reason}
-                    onChange={(e) => setReason(e.target.value)}
-                >
+                <select id="reason" className="control">
                     <option value="error">Ошибка</option>
                     <option value="notError">НЕ ошибка</option>
                 </select>
 
                 <div>
-                    <h3>Какой-то текст: {somevalue}</h3>
-                    <input
-                        type="text"
-                        value={somevalue}
-                        onChange={(e) => setSomeValue(e.target.value)}
-                        className="control"
-                    />
+                    <h3>Какой-то текст: {refInput.current?.value}</h3>
+                    <input ref={refInput} type="text" className="control" />
                 </div>
 
                 {/* disabled это кастомный пропс, которого нет в Button */}
