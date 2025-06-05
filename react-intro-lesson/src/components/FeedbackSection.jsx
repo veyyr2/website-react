@@ -5,6 +5,7 @@ export default function FeedbackSection() {
     const [name, setName] = useState('') // следить за изменением в форме ИМЯ
     const [reason, setReason] = useState('notError') // следить за изменением в форме ПРИЧИНА
     const [hasError, setHasError] = useState(false) // чтобы сразу пользователю не выводилась ошибка
+    const [somevalue, setSomeValue] = useState('') // чтобы в заголовке динамически обновлялось
 
     // функция для изменения значения в имени
     function handlerNameChange(event) {
@@ -40,6 +41,16 @@ export default function FeedbackSection() {
                     <option value="error">Ошибка</option>
                     <option value="notError">НЕ ошибка</option>
                 </select>
+
+                <div>
+                    <h3>Какой-то текст: {somevalue}</h3>
+                    <input
+                        type="text"
+                        value={somevalue}
+                        onChange={(e) => setSomeValue(e.target.value)}
+                        className="control"
+                    />
+                </div>
 
                 {/* disabled это кастомный пропс, которого нет в Button */}
                 <Button
