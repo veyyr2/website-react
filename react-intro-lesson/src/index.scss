@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -46,13 +50,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-// button:hover {
-//   border-color: #646cff;
-// }
-// button:focus,
-// button:focus-visible {
-//   outline: 4px auto -webkit-focus-ring-color;
-// }
 
 header, main, footer {
   background-color: #fcf9f9;
@@ -64,6 +61,22 @@ header, main, footer {
 footer {
   display: flex;
   justify-content: space-around;
+}
+
+form {
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+
+  // input
+  .control {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (prefers-color-scheme: light) {
