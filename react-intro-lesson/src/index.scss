@@ -49,6 +49,9 @@ button {
   background-color: #ffffff;
   cursor: pointer;
   transition: border-color 0.25s;
+  &:disabled {
+      cursor: not-allowed;
+  }
 }
 
 header, main, footer {

@@ -41,7 +41,14 @@ export default function FeedbackSection() {
                     <option value="notError">НЕ ошибка</option>
                 </select>
 
-                <Button>Отправить форму</Button>
+                {/* disabled это кастомный пропс, которого нет в Button */}
+                <Button
+                    disabled={hasError}
+                    title={hasError ? 'В вашей форме есть ошибки!' : null}
+                    isActive={!hasError}
+                >
+                    Отправить форму
+                </Button>
             </form>
         </section>
     )
