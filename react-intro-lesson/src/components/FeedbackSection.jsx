@@ -4,10 +4,12 @@ import { useState } from 'react'
 export default function FeedbackSection() {
     const [name, setName] = useState('') // следить за изменением в форме ИМЯ
     const [reason, setReason] = useState('notError') // следить за изменением в форме ПРИЧИНА
+    const [hasError, setHasError] = useState(false) // чтобы сразу пользователю не выводилась ошибка
 
     // функция для изменения значения в имени
     function handlerNameChange(event) {
         setName(event.target.value)
+        setHasError(event.target.value.trim().length === 0)
     }
 
     return (
@@ -22,6 +24,10 @@ export default function FeedbackSection() {
                     className="control"
                     value={name}
                     onChange={handlerNameChange}
+                    style={{
+                        border: hasError ? '2px solid red' : null,
+                        backgroundColor: hasError ? '#fdcfcf' : null,
+                    }}
                 />
 
                 <label htmlFor="reason">Причина</label>
