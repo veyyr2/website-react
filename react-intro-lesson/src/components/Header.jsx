@@ -1,12 +1,20 @@
 import logo from '../assets/react.svg';
-import { useState } from 'react'; // это хук для динамики состояний элементов
+import { useEffect, useState } from 'react'; // это хук для динамики состояний элементов
 
 export default function Header() {
     // обновление времени 
     const [timeNow, setTime] = useState(new Date());
 
-    // обновлять каждую секунду переменную timeNow
-    setInterval(() => setTime(new Date()), 1000);
+    useEffect(
+        () => {
+            // обновлять каждую секунду переменную timeNow
+            const interval = setInterval(() => setTime(new Date()), 1000)
+
+            // очищать интервал для оптимизации
+            return () => clearInterval(interval)
+        },
+        [] // здесь пусто
+    )
 
     return (
         <header>
