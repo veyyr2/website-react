@@ -28,7 +28,7 @@
     background-color: #fff;
     border: 1px solid #000;
 }
-// #endregion Button
+// #endregion END Button
 
 // #region TabsSection
     .container-nav-buttons {
@@ -39,4 +39,15 @@
         justify-content: center;
         gap: 10px;
     }
-// #endregion
+// #endregion END TabsSection
+
+// #region ModalWindow
+    dialog {
+        width: 400px;
+        margin: 10rem auto;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        z-index: 100;
+    }
+// #endregion END ModalWindow

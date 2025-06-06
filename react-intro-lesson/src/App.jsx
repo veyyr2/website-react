@@ -8,7 +8,7 @@ import FeedbackSection from './components/FeedbackSection'; // страница 
 import EffectSection from './components/EffectSection'; // страница эффектов
 
 export default function App() {
-    const [tab, setTab] = useState('feedback');
+    const [tab, setTab] = useState('effect');
 
     return (
         <>
@@ -20,7 +20,7 @@ export default function App() {
                 {tab === 'main' && <MainSection />}
                 {/* если нажали обратная связь */}
                 {tab === 'feedback' && <FeedbackSection />}
-                {/* если нажали обратная связь */}
+                {/* если нажали эффекты */}
                 {tab === 'effect' && <EffectSection />}
             </main>
 
