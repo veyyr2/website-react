@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "./Button"; // кнопка кастомная
-import ModalWindow from "./ModalWindow";
+import ModalWindow from "./ModalWindow"; // компонент модальное окно
 
 
 export default function EffectSection() {
@@ -8,7 +8,7 @@ export default function EffectSection() {
 
     // открыть модальное окно
     function openModal () {
-
+        setModal(true)
     }
 
     return(
@@ -19,6 +19,7 @@ export default function EffectSection() {
             <ModalWindow open={modal}>
                 <h3>Здесь есть текст</h3>
                 <p>Тут будут разные эффекты!!!</p>
+                <button onClick={() => setModal(false)}>Закрыть</button>
             </ModalWindow>
         </section>
     )
